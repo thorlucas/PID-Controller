@@ -1,0 +1,258 @@
+\hypertarget{class_model}{}\section{Model Class Reference}
+\label{class_model}\index{Model@{Model}}
+
+
+This is a simple model for heating of a load on a hotplate or something similar.  
+
+
+
+
+{\ttfamily \#include $<$model.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_abebd94be0a8a1c0f0bd40ade2c4efb71}{Model}} (double t)
+\item 
+void \mbox{\hyperlink{class_model_a30a27a8a0abd98981f23815037f1cd5a}{update}} (double t)
+\item 
+double \mbox{\hyperlink{class_model_aa308543029550abb6da1ee0f4fe8581f}{get\+Load\+Temp}} ()
+\item 
+double \mbox{\hyperlink{class_model_a5aea080a5b4ca3283401ed1ef761d219}{get\+Plate\+Temp}} ()
+\item 
+double \mbox{\hyperlink{class_model_a3fa2494f0e4d817ed2c96c6e8d4fa8ca}{get\+Ambient\+Temp}} ()
+\item 
+double \mbox{\hyperlink{class_model_a56bbe0e7ef9e17d358a1bed355fcb192}{get\+Amps}} ()
+\item 
+void \mbox{\hyperlink{class_model_a38da3e25e7d135712c94e1274cd4389c}{set\+Amps}} (double a, double t)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_model_aca9e1c3383fa4fdd1107a0ad6432e7ee}{ambient\+Temp}}
+\begin{DoxyCompactList}\small\item\em The current ambient temperature. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_aaace2937872bd62f72c9f3d458c7f9b9}{load\+Temp}}
+\begin{DoxyCompactList}\small\item\em The current load temperature. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_ab2c61d4fb1ef5403adb9ab13e35918fd}{plate\+Temp}}
+\begin{DoxyCompactList}\small\item\em The current temperature of the hotplate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_afc6cbef0a22dfc8fff87fde5d72cbef8}{load\+Capacity}}
+\begin{DoxyCompactList}\small\item\em The heat capacity of the load. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_afb7f9a5f30dd840632441178671b1a67}{plate\+Capacity}}
+\begin{DoxyCompactList}\small\item\em The heat capacity of the plate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_aa90ed4603369e2af1fc311702854e6c5}{Upa}}
+\begin{DoxyCompactList}\small\item\em Transfer coefficient between plate and ambient. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_abe4d7709a1d0396475c057304311c3a2}{Ula}}
+\begin{DoxyCompactList}\small\item\em Transfer coefficient between load and ambient. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_a6fc46b2708f4a8adf661b6017100d468}{Ulp}}
+\begin{DoxyCompactList}\small\item\em Transfer coefficient between plate and load. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_a2514b312b1eb77ad0a09b80216bb54e3}{load}}
+\begin{DoxyCompactList}\small\item\em Load in grams. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_a15824807b04be7c57d69f6a284772f2d}{plate}}
+\begin{DoxyCompactList}\small\item\em Plate in grams. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_a35f477e5c5286066fe10cdb25e32203f}{plate\+Amps}}
+\item 
+double \mbox{\hyperlink{class_model_a1889ea7cb9469a56fd8ad85ce064c937}{plate\+Voltage}}
+\item 
+double \mbox{\hyperlink{class_model_a2e4045381bc766f26eafb15dfc66c26b}{plate\+Max\+Amps}}
+\item 
+double \mbox{\hyperlink{class_model_ad619a4ed5e8532ca3dc2f002ddb36e7e}{plate\+Amps\+Per\+Sec}}
+\begin{DoxyCompactList}\small\item\em Maximum change of amps per second. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_ad504c28adb232f2159ba24a163374f98}{last\+Time}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a simple model for heating of a load on a hotplate or something similar. 
+
+The load loses heat to the ambient, as does the hotplate itself. Load temp often fluctuates suddenly when new liquid is added. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_abebd94be0a8a1c0f0bd40ade2c4efb71}\label{class_model_abebd94be0a8a1c0f0bd40ade2c4efb71}} 
+\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}}
+{\footnotesize\ttfamily Model\+::\+Model (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})}
+
+~\newline
+(k/s) $\ast$ A k = 30 W/mK (stainless steel) s = 0.\+01m (1cm thick) A = 0.\+5m$\ast$0.5m = 0.\+25m$^\wedge$2
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_a3fa2494f0e4d817ed2c96c6e8d4fa8ca}\label{class_model_a3fa2494f0e4d817ed2c96c6e8d4fa8ca}} 
+\index{Model@{Model}!get\+Ambient\+Temp@{get\+Ambient\+Temp}}
+\index{get\+Ambient\+Temp@{get\+Ambient\+Temp}!Model@{Model}}
+\subsubsection{\texorpdfstring{get\+Ambient\+Temp()}{getAmbientTemp()}}
+{\footnotesize\ttfamily double Model\+::get\+Ambient\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_a56bbe0e7ef9e17d358a1bed355fcb192}\label{class_model_a56bbe0e7ef9e17d358a1bed355fcb192}} 
+\index{Model@{Model}!get\+Amps@{get\+Amps}}
+\index{get\+Amps@{get\+Amps}!Model@{Model}}
+\subsubsection{\texorpdfstring{get\+Amps()}{getAmps()}}
+{\footnotesize\ttfamily double Model\+::get\+Amps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_aa308543029550abb6da1ee0f4fe8581f}\label{class_model_aa308543029550abb6da1ee0f4fe8581f}} 
+\index{Model@{Model}!get\+Load\+Temp@{get\+Load\+Temp}}
+\index{get\+Load\+Temp@{get\+Load\+Temp}!Model@{Model}}
+\subsubsection{\texorpdfstring{get\+Load\+Temp()}{getLoadTemp()}}
+{\footnotesize\ttfamily double Model\+::get\+Load\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_a5aea080a5b4ca3283401ed1ef761d219}\label{class_model_a5aea080a5b4ca3283401ed1ef761d219}} 
+\index{Model@{Model}!get\+Plate\+Temp@{get\+Plate\+Temp}}
+\index{get\+Plate\+Temp@{get\+Plate\+Temp}!Model@{Model}}
+\subsubsection{\texorpdfstring{get\+Plate\+Temp()}{getPlateTemp()}}
+{\footnotesize\ttfamily double Model\+::get\+Plate\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_a38da3e25e7d135712c94e1274cd4389c}\label{class_model_a38da3e25e7d135712c94e1274cd4389c}} 
+\index{Model@{Model}!set\+Amps@{set\+Amps}}
+\index{set\+Amps@{set\+Amps}!Model@{Model}}
+\subsubsection{\texorpdfstring{set\+Amps()}{setAmps()}}
+{\footnotesize\ttfamily void Model\+::set\+Amps (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{t }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_a30a27a8a0abd98981f23815037f1cd5a}\label{class_model_a30a27a8a0abd98981f23815037f1cd5a}} 
+\index{Model@{Model}!update@{update}}
+\index{update@{update}!Model@{Model}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Model\+::update (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_model_aca9e1c3383fa4fdd1107a0ad6432e7ee}\label{class_model_aca9e1c3383fa4fdd1107a0ad6432e7ee}} 
+\index{Model@{Model}!ambient\+Temp@{ambient\+Temp}}
+\index{ambient\+Temp@{ambient\+Temp}!Model@{Model}}
+\subsubsection{\texorpdfstring{ambient\+Temp}{ambientTemp}}
+{\footnotesize\ttfamily double Model\+::ambient\+Temp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current ambient temperature. 
+
+\mbox{\Hypertarget{class_model_ad504c28adb232f2159ba24a163374f98}\label{class_model_ad504c28adb232f2159ba24a163374f98}} 
+\index{Model@{Model}!last\+Time@{last\+Time}}
+\index{last\+Time@{last\+Time}!Model@{Model}}
+\subsubsection{\texorpdfstring{last\+Time}{lastTime}}
+{\footnotesize\ttfamily double Model\+::last\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_model_a2514b312b1eb77ad0a09b80216bb54e3}\label{class_model_a2514b312b1eb77ad0a09b80216bb54e3}} 
+\index{Model@{Model}!load@{load}}
+\index{load@{load}!Model@{Model}}
+\subsubsection{\texorpdfstring{load}{load}}
+{\footnotesize\ttfamily double Model\+::load\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Load in grams. 
+
+\mbox{\Hypertarget{class_model_afc6cbef0a22dfc8fff87fde5d72cbef8}\label{class_model_afc6cbef0a22dfc8fff87fde5d72cbef8}} 
+\index{Model@{Model}!load\+Capacity@{load\+Capacity}}
+\index{load\+Capacity@{load\+Capacity}!Model@{Model}}
+\subsubsection{\texorpdfstring{load\+Capacity}{loadCapacity}}
+{\footnotesize\ttfamily double Model\+::load\+Capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The heat capacity of the load. 
+
+J/K. \mbox{\Hypertarget{class_model_aaace2937872bd62f72c9f3d458c7f9b9}\label{class_model_aaace2937872bd62f72c9f3d458c7f9b9}} 
+\index{Model@{Model}!load\+Temp@{load\+Temp}}
+\index{load\+Temp@{load\+Temp}!Model@{Model}}
+\subsubsection{\texorpdfstring{load\+Temp}{loadTemp}}
+{\footnotesize\ttfamily double Model\+::load\+Temp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current load temperature. 
+
+\mbox{\Hypertarget{class_model_a15824807b04be7c57d69f6a284772f2d}\label{class_model_a15824807b04be7c57d69f6a284772f2d}} 
+\index{Model@{Model}!plate@{plate}}
+\index{plate@{plate}!Model@{Model}}
+\subsubsection{\texorpdfstring{plate}{plate}}
+{\footnotesize\ttfamily double Model\+::plate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Plate in grams. 
+
+\mbox{\Hypertarget{class_model_a35f477e5c5286066fe10cdb25e32203f}\label{class_model_a35f477e5c5286066fe10cdb25e32203f}} 
+\index{Model@{Model}!plate\+Amps@{plate\+Amps}}
+\index{plate\+Amps@{plate\+Amps}!Model@{Model}}
+\subsubsection{\texorpdfstring{plate\+Amps}{plateAmps}}
+{\footnotesize\ttfamily double Model\+::plate\+Amps\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_model_ad619a4ed5e8532ca3dc2f002ddb36e7e}\label{class_model_ad619a4ed5e8532ca3dc2f002ddb36e7e}} 
+\index{Model@{Model}!plate\+Amps\+Per\+Sec@{plate\+Amps\+Per\+Sec}}
+\index{plate\+Amps\+Per\+Sec@{plate\+Amps\+Per\+Sec}!Model@{Model}}
+\subsubsection{\texorpdfstring{plate\+Amps\+Per\+Sec}{plateAmpsPerSec}}
+{\footnotesize\ttfamily double Model\+::plate\+Amps\+Per\+Sec\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum change of amps per second. 
+
+\mbox{\Hypertarget{class_model_afb7f9a5f30dd840632441178671b1a67}\label{class_model_afb7f9a5f30dd840632441178671b1a67}} 
+\index{Model@{Model}!plate\+Capacity@{plate\+Capacity}}
+\index{plate\+Capacity@{plate\+Capacity}!Model@{Model}}
+\subsubsection{\texorpdfstring{plate\+Capacity}{plateCapacity}}
+{\footnotesize\ttfamily double Model\+::plate\+Capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The heat capacity of the plate. 
+
+J/K. \mbox{\Hypertarget{class_model_a2e4045381bc766f26eafb15dfc66c26b}\label{class_model_a2e4045381bc766f26eafb15dfc66c26b}} 
+\index{Model@{Model}!plate\+Max\+Amps@{plate\+Max\+Amps}}
+\index{plate\+Max\+Amps@{plate\+Max\+Amps}!Model@{Model}}
+\subsubsection{\texorpdfstring{plate\+Max\+Amps}{plateMaxAmps}}
+{\footnotesize\ttfamily double Model\+::plate\+Max\+Amps\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_model_ab2c61d4fb1ef5403adb9ab13e35918fd}\label{class_model_ab2c61d4fb1ef5403adb9ab13e35918fd}} 
+\index{Model@{Model}!plate\+Temp@{plate\+Temp}}
+\index{plate\+Temp@{plate\+Temp}!Model@{Model}}
+\subsubsection{\texorpdfstring{plate\+Temp}{plateTemp}}
+{\footnotesize\ttfamily double Model\+::plate\+Temp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current temperature of the hotplate. 
+
+\mbox{\Hypertarget{class_model_a1889ea7cb9469a56fd8ad85ce064c937}\label{class_model_a1889ea7cb9469a56fd8ad85ce064c937}} 
+\index{Model@{Model}!plate\+Voltage@{plate\+Voltage}}
+\index{plate\+Voltage@{plate\+Voltage}!Model@{Model}}
+\subsubsection{\texorpdfstring{plate\+Voltage}{plateVoltage}}
+{\footnotesize\ttfamily double Model\+::plate\+Voltage\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_model_abe4d7709a1d0396475c057304311c3a2}\label{class_model_abe4d7709a1d0396475c057304311c3a2}} 
+\index{Model@{Model}!Ula@{Ula}}
+\index{Ula@{Ula}!Model@{Model}}
+\subsubsection{\texorpdfstring{Ula}{Ula}}
+{\footnotesize\ttfamily double Model\+::\+Ula\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transfer coefficient between load and ambient. 
+
+\mbox{\Hypertarget{class_model_a6fc46b2708f4a8adf661b6017100d468}\label{class_model_a6fc46b2708f4a8adf661b6017100d468}} 
+\index{Model@{Model}!Ulp@{Ulp}}
+\index{Ulp@{Ulp}!Model@{Model}}
+\subsubsection{\texorpdfstring{Ulp}{Ulp}}
+{\footnotesize\ttfamily double Model\+::\+Ulp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transfer coefficient between plate and load. 
+
+\mbox{\Hypertarget{class_model_aa90ed4603369e2af1fc311702854e6c5}\label{class_model_aa90ed4603369e2af1fc311702854e6c5}} 
+\index{Model@{Model}!Upa@{Upa}}
+\index{Upa@{Upa}!Model@{Model}}
+\subsubsection{\texorpdfstring{Upa}{Upa}}
+{\footnotesize\ttfamily double Model\+::\+Upa\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transfer coefficient between plate and ambient. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{model_8h}{model.\+h}}\item 
+src/\mbox{\hyperlink{model_8cpp}{model.\+cpp}}\end{DoxyCompactItemize}

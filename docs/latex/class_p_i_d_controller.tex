@@ -1,0 +1,196 @@
+\hypertarget{class_p_i_d_controller}{}\section{P\+I\+D\+Controller Class Reference}
+\label{class_p_i_d_controller}\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+
+
+Proportional, Integral, Derivative controller for feedback control loops This class has methods for computing the output, as well as the error and holding the different constants.  
+
+
+
+
+{\ttfamily \#include $<$pid.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_i_d_controller_adc1fe861be2cf7aec13fa7855a4c3412}{P\+I\+D\+Controller}} (double sp, double pv, double t=0.f, double p=1.f, double i=1.f, double d=1.f)
+\begin{DoxyCompactList}\small\item\em Sets up the controller. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_controller_ad8d86f165bb52832ad0ea74d2c6914cc}{output}} (double t, double pv)
+\begin{DoxyCompactList}\small\item\em Calculate the output we need to impart. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_controller_aa5a018e2fb2330d74399fdfaa9adbf54}{error}} (double pv)
+\begin{DoxyCompactList}\small\item\em Calculate the error given the time and process variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_p_i_d_controller_a04221df772b587731f0ad8e5525181ea}{Kp}}
+\begin{DoxyCompactList}\small\item\em Constant of proportionality. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_controller_a3b77d4d55fb7a40947b22be010e9754f}{Ki}}
+\begin{DoxyCompactList}\small\item\em Constant of integration. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_controller_a7cebd6dfe5a9d955523e89907f1b4854}{Kd}}
+\begin{DoxyCompactList}\small\item\em Constant of differentiation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_controller_afd7c200aa64929404551b42f79931aca}{setpoint}}
+\begin{DoxyCompactList}\small\item\em The set point we\textquotesingle{}re trying to reach and maintain. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_controller_aace99d409fcb5c44628a0f435afb25e6}{integral}}
+\begin{DoxyCompactList}\small\item\em This is the cummulative integral. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_controller_aaf31f0adb542cb3bae0940dfd05b6640}{derivative}}
+\begin{DoxyCompactList}\small\item\em This is the current derivative. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_controller_a8cb565aa86e31cde944b3e9b360dd624}{last\+Time}}
+\begin{DoxyCompactList}\small\item\em The last time recorded. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_p_i_d_controller_aa58498d6e2cf616b5b04b0c4e561eb03}{last\+Error}}
+\begin{DoxyCompactList}\small\item\em The last error recorded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Proportional, Integral, Derivative controller for feedback control loops This class has methods for computing the output, as well as the error and holding the different constants. 
+
+Kp$\ast$e(t) + Ki$\ast$(integral 0-\/$>$t e(t)) dt + Kd$\ast$(d/dx e(t)) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_p_i_d_controller_adc1fe861be2cf7aec13fa7855a4c3412}\label{class_p_i_d_controller_adc1fe861be2cf7aec13fa7855a4c3412}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{P\+I\+D\+Controller()}{PIDController()}}
+{\footnotesize\ttfamily P\+I\+D\+Controller\+::\+P\+I\+D\+Controller (\begin{DoxyParamCaption}\item[{double}]{sp,  }\item[{double}]{pv,  }\item[{double}]{t = {\ttfamily 0.f},  }\item[{double}]{p = {\ttfamily 1.f},  }\item[{double}]{i = {\ttfamily 1.f},  }\item[{double}]{d = {\ttfamily 1.f} }\end{DoxyParamCaption})}
+
+
+
+Sets up the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & the initial set point. \\
+\hline
+{\em pv} & the initial process variable y(x). \\
+\hline
+{\em t} & the initial time (usually 0). \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_p_i_d_controller_aa5a018e2fb2330d74399fdfaa9adbf54}\label{class_p_i_d_controller_aa5a018e2fb2330d74399fdfaa9adbf54}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!error@{error}}
+\index{error@{error}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::error (\begin{DoxyParamCaption}\item[{double}]{pv }\end{DoxyParamCaption})}
+
+
+
+Calculate the error given the time and process variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv} & the process variable. (Current y(x)). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_p_i_d_controller_ad8d86f165bb52832ad0ea74d2c6914cc}\label{class_p_i_d_controller_ad8d86f165bb52832ad0ea74d2c6914cc}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!output@{output}}
+\index{output@{output}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::output (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{double}]{pv }\end{DoxyParamCaption})}
+
+
+
+Calculate the output we need to impart. 
+
+Calculated by Kp$\ast$e(t) + Ki$\ast$(integral 0-\/$>$t e(t)) dt + Kd$\ast$(d/dx e(t)). 
+\begin{DoxyParams}{Parameters}
+{\em t} & the time this process variable was recorded. \\
+\hline
+{\em pv} & the process variable. (Current y(x)). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the movement needed to impart. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_p_i_d_controller_aaf31f0adb542cb3bae0940dfd05b6640}\label{class_p_i_d_controller_aaf31f0adb542cb3bae0940dfd05b6640}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!derivative@{derivative}}
+\index{derivative@{derivative}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{derivative}{derivative}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::derivative\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is the current derivative. 
+
+\mbox{\Hypertarget{class_p_i_d_controller_aace99d409fcb5c44628a0f435afb25e6}\label{class_p_i_d_controller_aace99d409fcb5c44628a0f435afb25e6}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!integral@{integral}}
+\index{integral@{integral}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{integral}{integral}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::integral\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is the cummulative integral. 
+
+\mbox{\Hypertarget{class_p_i_d_controller_a7cebd6dfe5a9d955523e89907f1b4854}\label{class_p_i_d_controller_a7cebd6dfe5a9d955523e89907f1b4854}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!Kd@{Kd}}
+\index{Kd@{Kd}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{Kd}{Kd}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::\+Kd\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constant of differentiation. 
+
+Multiplied to the derivative of the error. \mbox{\Hypertarget{class_p_i_d_controller_a3b77d4d55fb7a40947b22be010e9754f}\label{class_p_i_d_controller_a3b77d4d55fb7a40947b22be010e9754f}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!Ki@{Ki}}
+\index{Ki@{Ki}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{Ki}{Ki}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::\+Ki\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constant of integration. 
+
+Multiplied to definite integral of the error. \mbox{\Hypertarget{class_p_i_d_controller_a04221df772b587731f0ad8e5525181ea}\label{class_p_i_d_controller_a04221df772b587731f0ad8e5525181ea}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!Kp@{Kp}}
+\index{Kp@{Kp}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{Kp}{Kp}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::\+Kp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constant of proportionality. 
+
+Multiplied directly to error. \mbox{\Hypertarget{class_p_i_d_controller_aa58498d6e2cf616b5b04b0c4e561eb03}\label{class_p_i_d_controller_aa58498d6e2cf616b5b04b0c4e561eb03}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!last\+Error@{last\+Error}}
+\index{last\+Error@{last\+Error}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{last\+Error}{lastError}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::last\+Error\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The last error recorded. 
+
+\mbox{\Hypertarget{class_p_i_d_controller_a8cb565aa86e31cde944b3e9b360dd624}\label{class_p_i_d_controller_a8cb565aa86e31cde944b3e9b360dd624}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!last\+Time@{last\+Time}}
+\index{last\+Time@{last\+Time}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{last\+Time}{lastTime}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::last\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The last time recorded. 
+
+\mbox{\Hypertarget{class_p_i_d_controller_afd7c200aa64929404551b42f79931aca}\label{class_p_i_d_controller_afd7c200aa64929404551b42f79931aca}} 
+\index{P\+I\+D\+Controller@{P\+I\+D\+Controller}!setpoint@{setpoint}}
+\index{setpoint@{setpoint}!P\+I\+D\+Controller@{P\+I\+D\+Controller}}
+\subsubsection{\texorpdfstring{setpoint}{setpoint}}
+{\footnotesize\ttfamily double P\+I\+D\+Controller\+::setpoint\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The set point we\textquotesingle{}re trying to reach and maintain. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{pid_8h}{pid.\+h}}\item 
+src/\mbox{\hyperlink{pid_8cpp}{pid.\+cpp}}\end{DoxyCompactItemize}
