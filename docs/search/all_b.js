@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['ula',['Ula',['../class_model.html#abe4d7709a1d0396475c057304311c3a2',1,'Model']]],
-  ['ulp',['Ulp',['../class_model.html#a6fc46b2708f4a8adf661b6017100d468',1,'Model']]],
-  ['upa',['Upa',['../class_model.html#aa90ed4603369e2af1fc311702854e6c5',1,'Model']]],
-  ['update',['update',['../class_model.html#a30a27a8a0abd98981f23815037f1cd5a',1,'Model']]]
+  ['setamps',['setAmps',['../class_model.html#a38da3e25e7d135712c94e1274cd4389c',1,'Model']]],
+  ['setpoint',['setpoint',['../class_p_i_d_controller.html#afd7c200aa64929404551b42f79931aca',1,'PIDController']]]
 ];

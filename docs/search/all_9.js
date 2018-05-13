@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['proportional_2dintegral_2dderivative_20controller',['Proportional-Integral-Derivative Controller',['../index.html',1,'']]],
   ['pid_2ecpp',['pid.cpp',['../pid_8cpp.html',1,'']]],
   ['pid_2eh',['pid.h',['../pid_8h.html',1,'']]],
   ['pidcontroller',['PIDController',['../class_p_i_d_controller.html',1,'PIDController'],['../class_p_i_d_controller.html#adc1fe861be2cf7aec13fa7855a4c3412',1,'PIDController::PIDController()']]],
